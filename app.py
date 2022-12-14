@@ -103,8 +103,6 @@ def predict():
     
     all_records = records.find()
     
-    client.close()
-    
     return render_template('predict.html', records=all_records)
 
 @app.route('/record')
@@ -123,16 +121,11 @@ def record():
     
     all_records = records.find()
     
-    datacounts = records.count()
-
-    client.close()
+    return render_template('record.html', records=all_records)
         
-    if datacounts==0:
-        return redirect(url_for('error'))
 
-    if datacounts>0:
-        return render_template('record.html', records=all_records)
-        
+
+
 @app.post('/<id>/delete/') # Delect stock user not interested
 def delete(id):
     # Connect to Mongo DB
@@ -148,18 +141,9 @@ def delete(id):
 
     records.delete_one({"_id": ObjectId(id)})
     # stay at the same page
-    
-    if records.count()==0:
-        return redirect(url_for('error'))
 
-    if records.count()>0:
-        return redirect(url_for('record'))
+    return redirect(url_for('record'))
         
-        
-@app.route('/error')
-def error():
-    return render_template('error.html')
-
     
 if __name__ == '__main__':
     app.run(debug=True)
