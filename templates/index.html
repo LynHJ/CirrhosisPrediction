@@ -1,0 +1,77 @@
+
+<body>
+    {% extends 'base.html' %}
+    
+    {% block content %}
+        
+        <div class="row">
+
+            <div class="col-md-7 mt-4" >
+           
+                <h3>Test Index(Normal Range)</h3>
+                <ul>
+                    <li>
+                        <h5>Total Bilirubin(1.2 mg/dL)</h5>
+                        <p>Higher than usual levels of bilirubin may indicate different types of liver or bile duct problems.</p>
+                    </li>
+
+                    <li>
+                        <h5>Albumin(3.4~5.4 g/dL)</h5>
+                        <p>Albumin is a protein made by your liver. Albumin enters your bloodstream and helps keep fluid from leaking out of your blood vessels into other tissues. It is also carries hormones, vitamins, and enzymes throughout your body.</p>
+                    </li>
+
+                    <li>
+                        <h5>Copper(62~140 mcg/dL)</h5>
+                        <p>It is important to many body functions, including building strong bones, producing energy, and making melanin (the substance that gives skin its color). But if you have too much or too little copper in your blood, it can be a sign of a serious health problem.</p>	
+                    </li>
+                    
+                    <li>
+                        <h5>Platelets(150~450 x10^9/L)</h5>
+                        <p>These are health conditions linked to abnormal platelets or abnormal platelet counts</p>
+                    </li>    
+                        
+                    <li>
+                        <h5>Prothrombin(11~13.5 s)</h5>
+                        <p>Prothrombin is a protein made by the liver. A prothrombin time (PT) test measures how long it takes for a clot to form in a blood sample.</p>
+                    </li>
+                </ul>
+            </div>            
+
+            <div class="col-md-4 mt-4" id ='bc1'>
+                <img width=100% src= 'static/images/cirrhosis.jpg' alt="cirrhosis stage"/>
+                <h1>Test Model</h1> 
+
+                <form action="predict">
+                    <label for="shortcode">Name:</label>
+                    <input type="text" name="name" value="" placeholder="Name" required><br>
+                    <label for="shortcode">Age:</label>
+                    <input type="text" name="age" value="" placeholder="30" required><br>
+                    <label for="shortcode">Ascites(Y/N):</label>
+                    <input type="text" name="ascites" value="" placeholder="Y/N" required><br>
+                    <label for="shortcode">Hepatomegaly(Y/N):</label>
+                    <input type="text" name="hepatomegaly" value="" placeholder="Y/N" required><br>
+                    <label for="shortcode">Spiders(Y/N):</label>
+                    <input type="text" name="spiders" value="" placeholder="Y/N" required><br>
+                    <label for="shortcode">Edema(Y/N):</label>
+                    <input type="text" name="edema" value="" placeholder="Y/N" required><br>
+                    <label for="shortcode">Total Bilirubin(mg/dL):</label>
+                    <input type="text" name="bilirubin" value="" placeholder="1.3" required><br>
+                    <label for="shortcode">Albumin(g/dL):</label>
+                    <input type="text" name="albumin" value="" placeholder="6.4" required><br>
+                    <label for="shortcode">Copper(mcg/dL):</label>
+                    <input type="text" name="copper" value="" placeholder="200" required><br>
+                    <label for="shortcode">Platelets(10^9/L):</label>
+                    <input type="text" name="platelets" value="" placeholder="180" required><br>
+                    <label for="shortcode">Prothrombin(s):</label>
+                    <input type="text" name="prothrombin" value="" placeholder="14" required><br>
+                    <input type="submit" value="Submit" onclick="return confirm('Be Aware That This Model Has 87% Accuary Rate.The Result Might Be Imprecise')">
+                </form>
+                
+            </div>
+        </div>
+
+    {% endblock %}
+
+
+</body>
+

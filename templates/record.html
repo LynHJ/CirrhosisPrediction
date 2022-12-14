@@ -1,0 +1,87 @@
+
+<body>
+    {% extends 'base.html' %}
+
+    {% block content %}
+        <div class="row" id="bc">
+            {% for record in records %} <!-- for loop method to call all the data of each record from MongoDB-->
+            <div id= flex class="col-md-12 mt-4 ";>
+                <div class="recorddetails">
+                        <h1>WHAT'S UP LIVER REPORT</h1>
+
+                        <table class="mt-4 ">
+                            <tr><td>Name : {{record.Name}}</td></tr>
+                            <tr><td>Age : {{record.Age}}</tr>
+                            <tr><td>Recorded Date : {{record.RecordedDate}}</tr>
+                        </table>
+                        <br>
+                        <h4>Symptoms</h4>
+                        <table class="mt-4">
+                            <tr>
+                                <td>Ascites:</td>
+                                <td>{{record.Ascites}}</td>
+                                <td></td>
+                                <td>Hepatomegaly:</td>
+                                <td>{{record.Hepatomegaly}}</td>
+                                <td></td>
+                                <td></td>
+                                <td>Spiders:</td>
+                                <td>{{record.Spiders}}</td>
+                                <td></td>
+                                <td></td>
+                                <td>Edema:</td>
+                                <td>{{record.Edema}}</td>
+                            </tr>
+                        </table>
+                        <br>
+                        <h4>Medical Examination Report</h4>
+                        <table class="mt-4;">
+                            <tr>
+                                <th>Test Type </th>
+                                <th>Results </th>
+                                <th>Normal Range</th>
+                            </tr>
+                            <tr>
+                                <td>Total Bilirubin</td>
+                                <td>{{record.Bilirubin}} mg/dL</td>
+                                <td>1.2 mg/dL</td>
+                            </tr>
+                            <tr>
+                                <td>Albumin</td>
+                                <td>{{record.Albumin}} g/dL</td>
+                                <td>3.4~5.4 g/dL</td>
+                            </tr>
+                            <tr>
+                                <td>Copper</td>
+                                <td>{{record.Copper}} mcg/dL</td>
+                                <td>62~140 mcg/dL</td>
+                            </tr>
+                            <tr>
+                                <td>Platelets</td>
+                                <td>{{record.Platelets}} 10^9/L</td>
+                                <td>150~450 x10^9/L</td>
+                            </tr>
+                            <tr>
+                                <td>Prothrombin</td>
+                                <td>{{record.Prothrombin}} s</td>
+                                <td>11~13.5 s</td>
+                            </tr>
+                            <tr>
+                                <td>Result</td>
+                                <td>{{record.Result}}</td>
+                            </tr>
+                        </table>
+
+                        <!-- Create a form to allow user to delete the record. The id is created automatically when above for-loop runs
+                            and the event of 'post' will triger '/delete'function in app.py-->
+                        <form style= display:inline method="POST" action="{{ url_for('delete', id=record['_id']) }}" >
+                            <input type="submit" value="Delete"
+                                   onclick="return confirm('Are you sure you want to delete this record?')"></form>
+                    </div>
+                </div>       
+            {% endfor %}
+        </div>
+    {% endblock %}
+</body>
+
+
