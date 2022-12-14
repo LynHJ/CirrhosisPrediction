@@ -1,4 +1,3 @@
-
 from flask import Flask, render_template, request, url_for, redirect
 import datetime as dt
 import pymongo 
@@ -6,7 +5,7 @@ from bson.objectid import ObjectId
 import pandas as pd
 import pickle
 from dotenv import load_dotenv
-
+import os
 
 app = Flask(__name__)
 
@@ -22,7 +21,7 @@ def predict():
 
     load_dotenv()
 
-    URL= mongodb_uri
+    URL= {os.environ.get("mongodb_uri")}
 
     # conn = 'mongodb://localhost:27017'
 
@@ -117,7 +116,7 @@ def record():
     # Connect to Mongo DB
     load_dotenv()
 
-    URL= mongodb_uri
+    URL= {os.environ.get("mongodb_uri")}
 
     # conn = 'mongodb://localhost:27017'
 
@@ -144,7 +143,7 @@ def delete(id):
     
     load_dotenv()
 
-    URL= mongodb_uri
+    URL= {os.environ.get("mongodb_uri")}
 
     # conn = 'mongodb://localhost:27017'
 
