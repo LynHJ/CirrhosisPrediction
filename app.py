@@ -5,7 +5,7 @@ import pymongo
 from bson.objectid import ObjectId
 import pandas as pd
 import pickle
-
+import mongoose
 
 
 app = Flask(__name__)
@@ -21,7 +21,7 @@ def index():
 def predict():
     # Connect to Mongo DB
     conn = mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost:27017/flask_db',
+    process.env.mongodb_uri,
     {
     useNewUrlParser: true,
     useUnifiedTopology: true,
