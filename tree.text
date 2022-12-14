@@ -1,0 +1,32 @@
+.
+├── CirrhosisPrediction.ipynb
+├── Output Data
+│   ├── NNResult.csv
+│   ├── cleaned.csv
+│   ├── clfTestResult.csv
+│   ├── model.pkl
+│   ├── predmodel.joblib
+│   └── scaler.pkl
+├── README.md
+├── Resources
+│   └── cirrhosis.csv
+├── app.py
+├── requirements.txt
+├── static
+│   ├── css
+│   │   └── style.css
+│   ├── images
+│   │   ├── blur-hospital.jpg
+│   │   └── cirrhosis.jpg
+│   └── js
+│       ├── anime.js
+│       └── app.js
+├── templates
+│   ├── base.html
+│   ├── error.html
+│   ├── index.html
+│   ├── predict.html
+│   └── record.html
+└── tree.text
+
+7 directories, 22 files
