@@ -18,14 +18,11 @@ def index():
 @app.route('/predict')
 def predict():
     # Connect to Mongo DB
+    load_dotenv() # use dotenv to hide sensitive credential as environment variables
+    DATABASE_URL=f'mongodb+srv://cirrhosis:{os.environ.get("password")}'\
+              '@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
 
-    load_dotenv()
-
-    URL= {os.environ.get("mongodb_uri")}
-
-    # conn = 'mongodb://localhost:27017'
-
-    client = pymongo.MongoClient(URL)
+    client = pymongo.MongoClient(DATABASE_URL)
    
     db = client.flask_db
 
@@ -114,13 +111,11 @@ def predict():
 
 def record():
     # Connect to Mongo DB
-    load_dotenv()
+    load_dotenv() # use dotenv to hide sensitive credential as environment variables
+    DATABASE_URL=f'mongodb+srv://cirrhosis:{os.environ.get("password")}'\
+              '@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
 
-    URL= {os.environ.get("mongodb_uri")}
-
-    # conn = 'mongodb://localhost:27017'
-
-    client = pymongo.MongoClient(URL)
+    client = pymongo.MongoClient(DATABASE_URL)
    
     db = client.flask_db
 
@@ -140,14 +135,12 @@ def record():
         
 @app.post('/<id>/delete/') # Delect stock user not interested
 def delete(id):
-    
-    load_dotenv()
+    # Connect to Mongo DB
+    load_dotenv() # use dotenv to hide sensitive credential as environment variables
+    DATABASE_URL=f'mongodb+srv://cirrhosis:{os.environ.get("password")}'\
+              '@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
 
-    URL= {os.environ.get("mongodb_uri")}
-
-    # conn = 'mongodb://localhost:27017'
-
-    client = pymongo.MongoClient(URL)
+    client = pymongo.MongoClient(DATABASE_URL)
    
     db = client.flask_db
 
