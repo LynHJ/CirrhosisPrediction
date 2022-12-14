@@ -20,7 +20,14 @@ def index():
 @app.route('/predict')
 def predict():
     # Connect to Mongo DB
-    conn = 'mongodb://localhost:27017'
+    conn = mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost:27017/flask_db',
+    {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+     },
+    )
+    # conn = 'mongodb://localhost:27017'
 
     client = pymongo.MongoClient(conn)
    
@@ -111,8 +118,14 @@ def predict():
 
 def record():
     # Connect to Mongo DB
-    conn = 'mongodb://localhost:27017'
-
+    # conn = 'mongodb://localhost:27017'     
+    conn = mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost:27017/flask_db',
+    {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+     },
+    )
     client = pymongo.MongoClient(conn)
    
     db = client.flask_db
@@ -134,7 +147,15 @@ def record():
 @app.post('/<id>/delete/') # Delect stock user not interested
 def delete(id):
     
-    conn = 'mongodb://localhost:27017'
+    # conn = 'mongodb://localhost:27017'
+
+    conn = mongoose.connect(
+    process.env.MONGODB_URI || 'mongodb://localhost:27017/flask_db',
+    {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+     },
+    )
 
     client = pymongo.MongoClient(conn)
    
