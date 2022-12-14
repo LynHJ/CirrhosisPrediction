@@ -5,11 +5,10 @@ import pymongo
 from bson.objectid import ObjectId
 import pandas as pd
 import pickle
-import mongoose
+from dotenv import load_dotenv
 
 
 app = Flask(__name__)
-
 
 @app.route('/', methods=['GET','POST'])
 def index():
@@ -20,16 +19,14 @@ def index():
 @app.route('/predict')
 def predict():
     # Connect to Mongo DB
-    conn = mongoose.connect(
-    process.env.mongodb_uri,
-    {
-    useNewUrlParser: True,
-    useUnifiedTopology: True,
-     },
-    )
+
+    load_dotenv()
+
+    URL= mongodb_uri
+
     # conn = 'mongodb://localhost:27017'
 
-    client = pymongo.MongoClient(conn)
+    client = pymongo.MongoClient(URL)
    
     db = client.flask_db
 
@@ -118,15 +115,13 @@ def predict():
 
 def record():
     # Connect to Mongo DB
-    # conn = 'mongodb://localhost:27017'     
-    conn = mongoose.connect(
-    process.env.mongodb_uri,
-    {
-    useNewUrlParser: True,
-    useUnifiedTopology: True,
-     },
-    )
-    client = pymongo.MongoClient(conn)
+    load_dotenv()
+
+    URL= mongodb_uri
+
+    # conn = 'mongodb://localhost:27017'
+
+    client = pymongo.MongoClient(URL)
    
     db = client.flask_db
 
@@ -147,17 +142,13 @@ def record():
 @app.post('/<id>/delete/') # Delect stock user not interested
 def delete(id):
     
+    load_dotenv()
+
+    URL= mongodb_uri
+
     # conn = 'mongodb://localhost:27017'
 
-    conn = mongoose.connect(
-    process.env.mongodb_uri,
-    {
-    useNewUrlParser: True,
-    useUnifiedTopology: True,
-     },
-    )
-
-    client = pymongo.MongoClient(conn)
+    client = pymongo.MongoClient(URL)
    
     db = client.flask_db
 
