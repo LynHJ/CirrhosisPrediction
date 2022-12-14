@@ -23,8 +23,8 @@ def predict():
     conn = mongoose.connect(
     process.env.mongodb_uri,
     {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useNewUrlParser: True,
+    useUnifiedTopology: True,
      },
     )
     # conn = 'mongodb://localhost:27017'
@@ -120,10 +120,10 @@ def record():
     # Connect to Mongo DB
     # conn = 'mongodb://localhost:27017'     
     conn = mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost:27017/flask_db',
+    process.env.mongodb_uri,
     {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useNewUrlParser: True,
+    useUnifiedTopology: True,
      },
     )
     client = pymongo.MongoClient(conn)
@@ -150,10 +150,10 @@ def delete(id):
     # conn = 'mongodb://localhost:27017'
 
     conn = mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost:27017/flask_db',
+    process.env.mongodb_uri,
     {
-    useNewUrlParser: true,
-    useUnifiedTopology: true,
+    useNewUrlParser: True,
+    useUnifiedTopology: True,
      },
     )
 
