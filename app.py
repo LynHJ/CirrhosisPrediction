@@ -18,10 +18,13 @@ def index():
 @app.route('/predict')
 def predict():
     # Connect to Mongo DB
-    load_dotenv() # use dotenv to hide sensitive credential as environment variables
+    # load_dotenv() # use dotenv to hide sensitive credential as environment variables
     # DATABASE_URL=f'mongodb+srv://flaskpredicirrhosis:{os.environ.get("password")}'\
             #   '@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
-    DATABASE_URL='mongodb+srv://flaskpredicirrhosis:iwyGfzfiBIhCIRuO@cirrhosispred.u8sicly.mongodb.net/database?retryWrites=true&w=majority'
+    
+    DATABASE_URL = os.getenv('MONGODB_URI')
+    
+    # DATABASE_URL='mongodb+srv://flaskpredicirrhosis:iwyGfzfiBIhCIRuO@cirrhosispred.u8sicly.mongodb.net/database?retryWrites=true&w=majority'
    
     client = pymongo.MongoClient(DATABASE_URL)
    
@@ -110,9 +113,9 @@ def predict():
 
 def record():
     # Connect to Mongo DB
-    load_dotenv() # use dotenv to hide sensitive credential as environment variables
-
-    DATABASE_URL='mongodb+srv://flaskpredicirrhosis:iwyGfzfiBIhCIRuO@cirrhosispred.u8sicly.mongodb.net/database?retryWrites=true&w=majority'
+    # load_dotenv() # use dotenv to hide sensitive credential as environment variables
+    DATABASE_URL = os.getenv('MONGODB_URI')
+    # DATABASE_URL='mongodb+srv://flaskpredicirrhosis:iwyGfzfiBIhCIRuO@cirrhosispred.u8sicly.mongodb.net/database?retryWrites=true&w=majority'
     # DATABASE_URL=f'mongodb+srv://flaskpredicirrhosis:{os.environ.get("password")}'\
             #   '@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
     client = pymongo.MongoClient(DATABASE_URL)
@@ -131,9 +134,10 @@ def record():
 @app.post('/<id>/delete/') # Delect stock user not interested
 def delete(id):
     # Connect to Mongo DB
-    load_dotenv() # use dotenv to hide sensitive credential as environment variables
-    DATABASE_URL='mongodb+srv://flaskpredicirrhosis:iwyGfzfiBIhCIRuO@cirrhosispred.u8sicly.mongodb.net/database?retryWrites=true&w=majority'
+    # load_dotenv() # use dotenv to hide sensitive credential as environment variables
+    # DATABASE_URL='mongodb+srv://flaskpredicirrhosis:iwyGfzfiBIhCIRuO@cirrhosispred.u8sicly.mongodb.net/database?retryWrites=true&w=majority'
     # DATABASE_URL=f'mongodb+srv://flaskpredicirrhosis:{os.environ.get("password")}'\
+    DATABASE_URL = os.getenv('MONGODB_URI')
             #   '@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
     client = pymongo.MongoClient(DATABASE_URL)
    
