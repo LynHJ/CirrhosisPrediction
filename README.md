@@ -66,6 +66,7 @@ Click [here](https://cirrhosisprediction.herokuapp.com) to go to my deplyed Fals
 ```
 Project  
 ├── CirrhosisPrediction.ipynb
+├── Cirrhosis Prediction.pptx
 ├── Output Data
 │   ├── Bar_Categors.png
 │   ├── Classifier.png
@@ -81,10 +82,8 @@ Project
 │   ├── Stage2.png
 │   ├── Stage3.png
 │   ├── Stage4.png
-│   ├── cleaned.csv
 │   ├── clfTestResult.csv
 │   ├── model.pkl
-│   ├── predmodel.joblib
 │   └── scaler.pkl
 ├── Procfile
 ├── README.md
