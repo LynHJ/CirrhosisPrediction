@@ -20,7 +20,7 @@ A total of 424 PBC patients, referred to Mayo Clinic during that ten-year interv
 
  Click [here](http://www.diva-portal.org/smash/get/diva2:769192/FULLTEXT01.pdf) to go to original research paper. Based on that research, Stage4 is Cirrhosis.  
  ```
- Stage 1 shows a florid, asymmetric destruction of the septal and interlobular bile ducts and what are typically surrounded by dense infiltrates of mononuclear cells, especially T lympocytes. Hepatic granuloma can be seen in all stages but are most common in stage 1. The presence of granuloma has been proposed to be of prognostic importance (Lee et al 1981). However, this observation has not be confirmed (Roll et al 1983).   
+ Stage 1 shows a florid, asymmetric destruction of the septal and interlobular bile ducts and what are typically surrounded by dense infiltrates of mononuclear cells, especially T lympocytes.....
 In stage 2 there are more widespread lesions with a reduction of normal bile ducts and increased numbers of atypical, poorly formed bile ducts. Diffuse portal fibrosis is seen and as in stage 1 periportal cholestasis is conspicuous.  
 Stage 3 displays more progressive lesions with fibrous septa forming bridges.   
 Stage 4 represents the end stage with clear cirrhosis and may be difficult to distinguish from other types of cirrhosis.   
@@ -30,7 +30,7 @@ Stage 4 represents the end stage with clear cirrhosis and may be difficult to di
 ## Data Processing
 
 #### 1. Load data    
-<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Data_Structure.png' width= 30% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Info.png' width= 50% >  
+<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Data_Structure.png' width= 35% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Info.png' width= 45% >  
 
  Brief: The data has only 418 data points and almost 1/3 of rows contain null values. Using <code>dropna()</code> methods is not a good way for this small data set.  
 
@@ -39,17 +39,21 @@ Stage 4 represents the end stage with clear cirrhosis and may be difficult to di
 ##### 2.1 Fill null values  
 
 <img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage1.png' width= 40% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage2.png' width= 40% >  
-<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage3.png' width= 40% ><img 'https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage4.png' width= 40% >  
+<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage3.png' width= 40% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage4.png' width= 40% >  
 
-Brief: As each stage's features have their own distributions, if I simply use the whole data's mean,mode,median to fill the null value, the data might have severe bias. To do so, I filtered each stage to make sure the null values have been filled in proper data. Furthermore, using this way to fill in null values could help classifier models achieve higher accuracy.  
+Brief: As each stage's features have their own distributions, if I simply use the whole data's mean, mode, median to fill the null value, the data might have severe bias. To do so, I filtered each stage to make sure the null values have been filled in proper data. Furthermore, using this way to fill in null values could help classifier models achieve higher accuracy.  
  
 ##### 2.2 Choose Featrues  
-<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Bar_Categors.png' width= 50% ><img 'https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Regplot.png' width= 50% >    
+<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Bar_Categors.png' width= 50% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Regplot.png' width= 50% >  
+  
+Brief: People whose liver disease is in stage 4 have higher chance to performance symptom of Ascites, spiders, Hepatomegaly, Edema. From the right picture above, if the color range is quite large, it means features and the target doesnt have liner relationships. And Age vs Stages seems has a fair positive relationship. And I decide to drop 'Cholesterol','Alk_Phos','SGOT','Tryglicerides','Sex','N_Days'  
 
 #### 3. Find out the best classifier models  
  
 ![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Classifier.png)
-![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/NNM.png)  
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/NNM.png)
+  
+Brief: Using for-loop method on supervised-ML and NNM find out the best prediction model  
 
 #### 4. Output findings  
 
