@@ -67,6 +67,8 @@ Brief: Using for-loop method on supervised-ML and NNM find out the best predicti
 
 Click [here](https://cirrhosisprediction.herokuapp.com) to go to my deplyed Falsk app.
 
+0. Create your own Flask app
+
 1. Sign up an account in Heroku and connect to Github. Click [here](https://www.freecodecamp.org/news/how-to-deploy-an-application-to-heroku/) 
 2. Sign up an account in MongoDB Atlas and some setup for deploying. Click [here](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas)  
 3. Include a runtime.txt which contain the python version you want to use. Click [here](http://www.learningaboutelectronics.com/Articles/How-to-specify-the-Python-runtime-version-in-heroku.php)   
