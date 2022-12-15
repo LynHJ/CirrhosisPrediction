@@ -47,6 +47,7 @@ Project
 │   ├── Classifier_Results.png
 │   ├── Data_Structure.png
 │   ├── FinalModel.png
+│   ├── Info.png
 │   ├── NNM.png
 │   ├── NNM_Results.png
 │   ├── NNResult.csv
