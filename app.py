@@ -4,7 +4,6 @@ import pymongo
 from bson.objectid import ObjectId
 import pandas as pd
 import pickle
-from dotenv import load_dotenv
 import os
 
 app = Flask(__name__)
@@ -17,14 +16,9 @@ def index():
 
 @app.route('/predict')
 def predict():
-    # Connect to Mongo DB
-    # load_dotenv() # use dotenv to hide sensitive credential as environment variables
-    # DATABASE_URL=f'mongodb+srv://flaskpredicirrhosis:{os.environ.get("password")}'\
-            #   '@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
-    
-    DATABASE_URL = os.getenv('MONGODB_URI')
-    
-    # DATABASE_URL='mongodb+srv://flaskpredicirrhosis:iwyGfzfiBIhCIRuO@cirrhosispred.u8sicly.mongodb.net/database?retryWrites=true&w=majority'
+   
+    # Connect MongoDB on Heroku
+    DATABASE_URL = os.getenv('MONGODB_URI') # Pull Config Vars from Heroku
    
     client = pymongo.MongoClient(DATABASE_URL)
    
@@ -112,12 +106,9 @@ def predict():
 @app.route('/record')
 
 def record():
-    # Connect to Mongo DB
-    # load_dotenv() # use dotenv to hide sensitive credential as environment variables
-    DATABASE_URL = os.getenv('MONGODB_URI')
-    # DATABASE_URL='mongodb+srv://flaskpredicirrhosis:iwyGfzfiBIhCIRuO@cirrhosispred.u8sicly.mongodb.net/database?retryWrites=true&w=majority'
-    # DATABASE_URL=f'mongodb+srv://flaskpredicirrhosis:{os.environ.get("password")}'\
-            #   '@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
+    # Connect MongoDB on Heroku
+    DATABASE_URL = os.getenv('MONGODB_URI') # Pull Config Vars from Heroku
+   
     client = pymongo.MongoClient(DATABASE_URL)
    
     db = client.flask_db
@@ -133,12 +124,9 @@ def record():
 
 @app.post('/<id>/delete/') # Delect stock user not interested
 def delete(id):
-    # Connect to Mongo DB
-    # load_dotenv() # use dotenv to hide sensitive credential as environment variables
-    # DATABASE_URL='mongodb+srv://flaskpredicirrhosis:iwyGfzfiBIhCIRuO@cirrhosispred.u8sicly.mongodb.net/database?retryWrites=true&w=majority'
-    # DATABASE_URL=f'mongodb+srv://flaskpredicirrhosis:{os.environ.get("password")}'\
-    DATABASE_URL = os.getenv('MONGODB_URI')
-            #   '@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
+    # Connect MongoDB on Heroku
+    DATABASE_URL = os.getenv('MONGODB_URI') # Pull Config Vars from Heroku
+   
     client = pymongo.MongoClient(DATABASE_URL)
    
     db = client.flask_db
