@@ -30,18 +30,21 @@ Stage 4 represents the end stage with clear cirrhosis and may be difficult to di
 ## Data Processing
 
 #### 1. Load data    
-<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Data_Structure.png' width= 40% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Info.png' width= 40% >
+<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Data_Structure.png' width= 30% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Info.png' width= 50% >  
+
+ Brief: The data has only 418 data points and almost 1/3 of rows contain null values. Using <code>dropna()</code> methods is not a good way for this small data set.  
+
 #### 2. Process data   
 
 ##### 2.1 Fill null values  
 
-![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage1.png)  
-![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage2.png)  
-![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage3.png)  
-![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage4.png)  
+<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage1.png' width= 40% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage2.png' width= 40% >  
+<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage3.png' width= 40% ><img 'https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage4.png' width= 40% >  
+
+Brief: As each stage's features have their own distributions, if I simply use the whole data's mean,mode,median to fill the null value, the data might have severe bias. To do so, I filtered each stage to make sure the null values have been filled in proper data. Furthermore, using this way to fill in null values could help classifier models achieve higher accuracy.  
+ 
 ##### 2.2 Choose Featrues  
-![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Bar_Categors.png)  
-![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Regplot.png)   
+<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Bar_Categors.png' width= 50% ><img 'https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Regplot.png' width= 50% >    
 
 #### 3. Find out the best classifier models  
  
