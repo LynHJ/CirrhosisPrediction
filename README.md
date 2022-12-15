@@ -36,7 +36,7 @@ Stage 4 represents the end stage with clear cirrhosis and may be difficult to di
 
 #### 2. Process data   
 
-##### 2.1 Fill null values  
+##### 2.1 Fill in null values  
 
 <img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage1.png' width= 40% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage2.png' width= 40% >  
 <img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage3.png' width= 40% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage4.png' width= 40% >  
@@ -57,25 +57,24 @@ Brief: Using for-loop method on supervised-ML and NNM find out the best predicti
 
 #### 4. Output findings  
 
-[Classifier Models Results ](https://github.com/LynHJ/CirrhosisPrediction/blob/4dab69dc8036c7b19b3bf8439703019c4682a523/Output%20Data/clfTestResult.csv)  
-[NNM Results ](https://github.com/LynHJ/CirrhosisPrediction/blob/4dab69dc8036c7b19b3bf8439703019c4682a523/Output%20Data/NNResult.csv)     
-
+>[Classifier Models Results ](https://github.com/LynHJ/CirrhosisPrediction/blob/4dab69dc8036c7b19b3bf8439703019c4682a523/Output%20Data/clfTestResult.csv)   
+>[NNM Results ](https://github.com/LynHJ/CirrhosisPrediction/blob/4dab69dc8036c7b19b3bf8439703019c4682a523/Output%20Data/NNResult.csv)  
+    
+>Final Prediciton model  
 ![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/FinalModel.png) 
  
 #### 5. Apply to Flask-Heroku-MongoDB  
 
 Click [here](https://cirrhosisprediction.herokuapp.com) to go to my deplyed Falsk app.
-   
-### Summary:
-<img src='' width= 51% ><img src='' width= 51% >
-<img src='' width= 51% ><img src='' width= 51% >
-<img src='' width= 51% ><img src='' width= 51% >
-<img src='' width= 51% ><img src='' width= 51% >
-<img src='' width= 51% ><img src='' width= 51% >
-<img src='' width= 51% ><img src='' width= 51% >
-<img src='' width= 51% ><img src='' width= 51% ><img src='' width= 51% ><img src='' width= 51% >
-<img src='' width= 51% ><img src='' width= 51% >
 
+1. Sign up an account in Heroku and connect to Github. Click [here](https://www.freecodecamp.org/news/how-to-deploy-an-application-to-heroku/) 
+2. Sign up an account in MongoDB Atlas and some setup for deploying. Click [here](https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas)  
+3. Include a runtime.txt which contain the python version you want to use. Click [here](http://www.learningaboutelectronics.com/Articles/How-to-specify-the-Python-runtime-version-in-heroku.php)   
+4. Change script regarding to MongoDB connection. Click [here](https://dev.to/vulcanwm/environment-variables-in-heroku-python-385o)
+5. Pip install Pigar and execute <code>pigar generate</code> in correct directory and you will get a list of tools which you used in that directory. For correctly deploying in Heroku, please make sure all item in the list has this structure: library== version (Ex. gunicorn==20.0.4)  
+6. Create a Procfile(help Heroku execute the app.py) with one line code<code>web: gunicorn app:app</code>  
+
+7. Now you should be able to run app.py remotely on Heroku if you follow 6 steps above correctly.
 
 ## Content:
 ```
