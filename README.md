@@ -19,22 +19,31 @@
 ## Data Processing
 
 1. Load data  
-2. Clean data(dropna,drop_duplicates) 
-3. Fill null values 
-3. Scale data  
-4. Split data  
-5. Find out the best classifier models  
-6. Output findings
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Data_Structure.png)  
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Info.png)  
+2. Process data 
+
+2.1 Fill null values 
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage1.png)  
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage2.png)  
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage3.png)  
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Stage4.png)  
+2.2 Choose Featrues
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Bar_Categors.png)  
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Regplot.png)   
+
+3. Find out the best classifier models
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Classifier.png)
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/NNM.png)  
+4. Output findings
+[Classifier Models Results ](https://github.com/LynHJ/CirrhosisPrediction/blob/4dab69dc8036c7b19b3bf8439703019c4682a523/Output%20Data/clfTestResult.csv) 
+[NNM Results ](https://github.com/LynHJ/CirrhosisPrediction/blob/4dab69dc8036c7b19b3bf8439703019c4682a523/Output%20Data/NNResult.csv)    
+
+![alt text](https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/FinalModel.png)  
 7. Apply to Flask-Heroku-MongoDB
+Click [here](https://cirrhosisprediction.herokuapp.com) to go to my deplyed Falsk app.
    
 ### Summary:
-
-##### <ins> Predicting</ins>:  
-
-
-##### <ins>Conclusion</ins>:  
-
-
 
 
 ## Content:
