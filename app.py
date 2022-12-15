@@ -19,7 +19,7 @@ def index():
 def predict():
     # Connect to Mongo DB
     load_dotenv() # use dotenv to hide sensitive credential as environment variables
-    DATABASE_URL='mongodb+srv://flaskpredicirrhosis:passwordpassword@cirrhosispred.u8sicly.mongodb.net/test?retryWrites=true&w=majority'
+    DATABASE_URL='mongodb+srv://flaskpredicirrhosis:passwordpassword@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
 
    
     client = pymongo.MongoClient(DATABASE_URL)
@@ -111,7 +111,7 @@ def record():
     # Connect to Mongo DB
     load_dotenv() # use dotenv to hide sensitive credential as environment variables
 
-    DATABASE_URL='mongodb+srv://flaskpredicirrhosis:passwordpassword@cirrhosispred.u8sicly.mongodb.net/test?retryWrites=true&w=majority'
+    DATABASE_URL='mongodb+srv://flaskpredicirrhosis:passwordpassword@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
 
     client = pymongo.MongoClient(DATABASE_URL)
    
@@ -130,7 +130,7 @@ def record():
 def delete(id):
     # Connect to Mongo DB
     load_dotenv() # use dotenv to hide sensitive credential as environment variables
-    DATABASE_URL='mongodb+srv://flaskpredicirrhosis:passwordpassword@cirrhosispred.u8sicly.mongodb.net/test?retryWrites=true&w=majority'
+    DATABASE_URL='mongodb+srv://flaskpredicirrhosis:passwordpassword@cirrhosispred.u8sicly.mongodb.net/?retryWrites=true&w=majority'
 
     client = pymongo.MongoClient(DATABASE_URL)
    
