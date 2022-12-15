@@ -16,13 +16,21 @@
 Cirrhosis is a late stage of scarring (fibrosis) of the liver caused by many forms of liver diseases and conditions, such as hepatitis and chronic alcoholism. The following data contains the information collected from the Mayo Clinic trial in primary biliary cirrhosis (PBC) of the liver conducted between 1974 and 1984. A description of the clinical background for the trial and the covariates recorded here is in Chapter 0, especially Section 0.2 of Fleming and Harrington, Counting
 Processes and Survival Analysis, Wiley, 1991. A more extended discussion can be found in Dickson, et al., Hepatology 10:1-7 (1989) and in Markus, et al., N Eng J of Med 320:1709-13 (1989).  
 
-A total of 424 PBC patients, referred to Mayo Clinic during that ten-year interval, met eligibility criteria for the randomized placebo-controlled trial of the drug D-penicillamine. The first 312 cases in the dataset participated in the randomized trial and contain largely complete data. The additional 112 cases did not participate in the clinical trial but consented to have basic measurements recorded and to be followed for survival. Six of those cases were lost to follow-up shortly after diagnosis, so the data here are on an additional 106 cases as well as the 312 randomized participants.  
+A total of 424 PBC patients, referred to Mayo Clinic during that ten-year interval, met eligibility criteria for the randomized placebo-controlled trial of the drug D-penicillamine. The first 312 cases in the dataset participated in the randomized trial and contain largely complete data. The additional 112 cases did not participate in the clinical trial but consented to have basic measurements recorded and to be followed for survival. Six of those cases were lost to follow-up shortly after diagnosis, so the data here are on an additional 106 cases as well as the 312 randomized participants. 
+
+ Click [here](http://www.diva-portal.org/smash/get/diva2:769192/FULLTEXT01.pdf) to go to original research paper. Based on that research, Stage4 is Cirrhosis.  
+ ```
+ Stage 1 shows a florid, asymmetric destruction of the septal and interlobular bile ducts and what are typically surrounded by dense infiltrates of mononuclear cells, especially T lympocytes. Hepatic granuloma can be seen in all stages but are most common in stage 1. The presence of granuloma has been proposed to be of prognostic importance (Lee et al 1981). However, this observation has not be confirmed (Roll et al 1983).   
+In stage 2 there are more widespread lesions with a reduction of normal bile ducts and increased numbers of atypical, poorly formed bile ducts. Diffuse portal fibrosis is seen and as in stage 1 periportal cholestasis is conspicuous.  
+Stage 3 displays more progressive lesions with fibrous septa forming bridges.   
+Stage 4 represents the end stage with clear cirrhosis and may be difficult to distinguish from other types of cirrhosis.   
+```
   
 
 ## Data Processing
 
 #### 1. Load data    
-<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Data_Structure.png' width= 51% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Info.png' width= 51% >
+<img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Data_Structure.png' width= 40% ><img src='https://github.com/LynHJ/CirrhosisPrediction/blob/cceee5a8e90e4cf4b7a98ef354b45f1b2abf33bf/Output%20Data/Info.png' width= 40% >
 #### 2. Process data   
 
 ##### 2.1 Fill null values  
@@ -131,6 +139,8 @@ pip install -r requirements.txt
 14. http://www.learningaboutelectronics.com/Articles/How-to-specify-the-Python-runtime-version-in-heroku.php  
 15. https://coding-boot-camp.github.io/full-stack/mongodb/deploy-with-heroku-and-mongodb-atlas  
 16. https://www.kaggle.com/datasets/fedesoriano/cirrhosis-prediction-dataset  
+17. http://www.diva-portal.org/smash/get/diva2:769192/FULLTEXT01.pdf  
+18. https://www.freepik.com/  
 
 
 
